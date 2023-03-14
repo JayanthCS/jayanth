@@ -12,7 +12,7 @@ public class AttendanceDTO implements Serializable{
 	private String CollegeName;
 	
 	public AttendanceDTO() {
-		System.out.println("No-arg constructor");
+		System.out.println("No-arg constructor ");
 	}
 	/**
 	 * @return the takenBy

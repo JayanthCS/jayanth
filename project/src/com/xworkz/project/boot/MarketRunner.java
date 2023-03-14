@@ -16,5 +16,10 @@ public class MarketRunner {
 		market.setOpenTime(LocalTime.of(5, 0));
 		market.toString();
 		System.out.println(market);
+		
+		int hash =market.hashCode();
+		System.out.println(hash);
+		boolean eq=market.equals(market);
+		System.out.println(eq); 
 	}
 }
