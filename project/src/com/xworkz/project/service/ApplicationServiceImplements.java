@@ -149,6 +149,7 @@ public class ApplicationServiceImplements implements ApplicationService {
 			}
 			if (osTypeSupported != null) {
 				System.out.println("osTypeSupported is valid");
+				return true;
 			} else {
 				System.err.println("osTypeSupported is invalid");
 			}
