@@ -1,0 +1,95 @@
+                                                TEST
+												
+												
+  1) The components of java are:
+     *JDK
+     *JRE	 
+     *JVM
+	 
+   * JVM:Java virtual machine 	 
+         Jvm provides runtime environment for the bytecode.
+		 the main tasks of jvm are
+		 * It loads the byte code
+		 * It verifies the byte code
+		 * It execute the byte code
+   * JRE:Java RunTime Environment
+         JRE contains jvm+set of libreries
+		 
+   * JDK : Java Development Kit
+         JDK contains JRE+Development tools like doc,files.
+
+  2)Features of java are 
+    * Java is object oriented programming language
+	* It is platform independent
+	* Code reusability
+	* It is secure
+	
+  3) Constructor: Constructor is a special type of method which has same name has class name
+       Types of Constructor are
+       * Default Constructor : Default Constructor means no-arg constructor , and also it is inbuilt, and it gives
+	   default values of the given dataType.
+       * Parameter Constructor: Parameter constructor are user defined constructor where programmer can provide 
+         parameters with in the parantisis of the constructor.
+		 
+   4)Variables: Variable is a container where we can store the data, and that data can be used in further program.
+     Types of Variables
+	 *Static variable:The variables written out side the method and inside the class is called Static Variables
+	 we can asscess satic variables by className.
+     *Local variable:variables written inside the method body is called Local variables
+     *Instance variable:variables written inside the class 
+     *Parameter variable:variables written inside the parantisis of the method or constructor is called Parameter variables.	 
+   
+   5)Because in some condition java dont support some oops concepts like Inheritance of multi-level,it is achived by interface
+   
+   6)Dynamic binding means compilation 
+     Static binding means runtime
+
+   7)OOPs concepts:
+     1.Polymorphism:poly means many , morphism means form it means one calss having differnt forms
+      Ex: OverLoad method is the example for polymorphism
+         Methods having same name and differnt parameters is called overloding which is the example for polymorphism.	  
+     2.Inheritance:Inheriting or accuring the properties and behavior of parent class to the child class is Inheritance.
+	 Inheritance can be achived by extending the super most class in the subclass by using extends key word.
+	 it gives has a relationship.
+	 Types of Inheritance
+	 *Single inheritance:one class inherits the properties of one parent class.
+     *Multi-Level inheritance: It is the chaining of inheritance where one class has a relationship with superclass 
+	 and that superclass has a relationship with another superclass.	 
+	 *Hirarcical inheritance:Where two child class inherits the property of one parent class
+	 *multiple inheritance: Where single child class inherits the properties of two parent class
+	 this inheritance is not supported in java due to ambugity .
+	 it can be achived by interface.
+	 3.Encapsulation:Encapsulation means wrapping the data into a single unit is called Encapsulation.
+       By using getter and setter method we can access the private members in the class
+       getter method is used read-only purpose
+       setter method is used write-only purpose
+     4.Abstraction:Hiding the implimentation and providing the neccesary data to the users.
+       
+
+    11)Interface: Interface which connect the two classes like a bridge.
+      where implementation class will implements the properties in interface class.It is is-a relationship
+      where usage class associates with interface .It is has-a relationship. 
+
+    13)Access Specifiers:
+      public : we can access out side the class and out side the package also.
+      private: we cannot access out side the package.
+      protected: we canot access out side the class and also in package.
+      final : we cannot access final properties .	  
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
