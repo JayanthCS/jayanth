@@ -31,10 +31,8 @@ public class DesertRepoImpl implements DesertRepo {
 		for (int index = 0; index < this.desertDTOs.length; index++) {
 			DesertDTO ref = this.desertDTOs[index];
 			if (ref.equals(dto)) {
-				System.out.println("dto is found");
+				System.out.println("dto is found :" + dto);
 				return ref;
-			} else {
-				System.err.println("dto is not found");
 			}
 		}
 		return null;
@@ -45,10 +43,8 @@ public class DesertRepoImpl implements DesertRepo {
 		for (int index = 0; index < this.desertDTOs.length; index++) {
 			DesertDTO ref = this.desertDTOs[index];
 			if (ref.getName().equals(name)) {
-				System.out.println("dto is found for name");
+				System.out.println("dto is found for name :" + name);
 				return ref;
-			} else {
-				System.err.println("dto is not found for name");
 			}
 		}
 		return null;
@@ -59,10 +55,8 @@ public class DesertRepoImpl implements DesertRepo {
 		for (int index = 0; index < this.desertDTOs.length; index++) {
 			DesertDTO ref = this.desertDTOs[index];
 			if (ref.getName().equals(name)) {
-				System.out.println("dto is found for name");
+				System.out.println("dto is found for name :" + name);
 				return ref.getArea();
-			} else {
-				System.err.println("dto is not found for name");
 			}
 		}
 		return 0;
@@ -73,10 +67,8 @@ public class DesertRepoImpl implements DesertRepo {
 		for (int index = 0; index < this.desertDTOs.length; index++) {
 			DesertDTO ref = this.desertDTOs[index];
 			if (ref.getName().equals(name) && ref.getCountry().equals(country) && ref.getArea() == area) {
-				System.out.println("dto is foun for name,country and area");
+				System.out.println("dto is foun for name,country and area ");
 				return ref;
-			} else {
-				System.err.println("dto is not found for name, country and area");
 			}
 		}
 		return null;

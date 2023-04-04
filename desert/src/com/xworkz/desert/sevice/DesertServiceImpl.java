@@ -81,7 +81,7 @@ public class DesertServiceImpl implements DesertService {
 				try {
 					boolean save = this.repo.save(dto);
 				} catch (MemoryFullException e) {
-					System.out.println(e.getMessage());
+					System.err.println(e.getMessage());
 					e.printStackTrace();
 				}
 				return true;

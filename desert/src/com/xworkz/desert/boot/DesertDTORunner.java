@@ -115,29 +115,11 @@ public class DesertDTORunner {
 			DesertDTO find1 = desertService.find(desertDTO3);
 			System.out.println(find1);
 
-			DesertDTO find2 = desertService.find(desertDTO5);
-			System.out.println(find2);
-
-			DesertDTO find3 = desertService.find(desertDTO7);
-			System.out.println(find3);
-
-			DesertDTO find4 = desertService.find(desertDTO8);
-			System.out.println(find4);
-
 			DesertDTO find5 = desertService.find(desertDTO10);
 			System.out.println(find5);
 
-			DesertDTO find6 = desertService.find(desertDTO12);
-			System.out.println(find6);
-
-			DesertDTO find7 = desertService.find(desertDTO15);
-			System.out.println(find7);
-
 			DesertDTO find8 = desertService.find(desertDTO22);
 			System.out.println(find8);
-
-			DesertDTO find9 = desertService.find(desertDTO19);
-			System.out.println(find9);
 
 			DesertDTO name = desertService.findByName("Thar");
 			System.out.println(name);
@@ -158,7 +140,7 @@ public class DesertDTORunner {
 			DesertDTO nameCountryArea = desertService.findByNameAndCountryAndArea("Registan", "World", 88);
 			System.out.println(nameCountryArea);
 		} catch (DataInvalidException e) {
-			System.out.println(e.getMessage());
+			System.err.println(e.getMessage());
 		}
 
 		int total = desertService.total();
