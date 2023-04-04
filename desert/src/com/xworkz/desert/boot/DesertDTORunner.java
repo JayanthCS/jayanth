@@ -60,130 +60,108 @@ public class DesertDTORunner {
 
 		DesertRepo desertRepo = new DesertRepoImpl();
 
-		DesertService desertService1 = new DesertServiceImpl(desertRepo);
-		DesertService desertService2 = new DesertServiceImpl(desertRepo);
-		DesertService desertService3 = new DesertServiceImpl(desertRepo);
-		DesertService desertService4 = new DesertServiceImpl(desertRepo);
-		DesertService desertService5 = new DesertServiceImpl(desertRepo);
-		DesertService desertService6 = new DesertServiceImpl(desertRepo);
-		DesertService desertService7 = new DesertServiceImpl(desertRepo);
-		DesertService desertService8 = new DesertServiceImpl(desertRepo);
-		DesertService desertService9 = new DesertServiceImpl(desertRepo);
-		DesertService desertService10 = new DesertServiceImpl(desertRepo);
-		DesertService desertService11 = new DesertServiceImpl(desertRepo);
-		DesertService desertService12 = new DesertServiceImpl(desertRepo);
-		DesertService desertService13 = new DesertServiceImpl(desertRepo);
-		DesertService desertService14 = new DesertServiceImpl(desertRepo);
-		DesertService desertService15 = new DesertServiceImpl(desertRepo);
-		DesertService desertService16 = new DesertServiceImpl(desertRepo);
-		DesertService desertService17 = new DesertServiceImpl(desertRepo);
-		DesertService desertService18 = new DesertServiceImpl(desertRepo);
-		DesertService desertService19 = new DesertServiceImpl(desertRepo);
-		DesertService desertService20 = new DesertServiceImpl(desertRepo);
-		DesertService desertService21 = new DesertServiceImpl(desertRepo);
-		DesertService desertService22 = new DesertServiceImpl(desertRepo);
-		DesertService desertService23 = new DesertServiceImpl(desertRepo);
+		DesertService desertService = new DesertServiceImpl(desertRepo);
 
 		try {
-			boolean j1 = desertService1.validAndSave(desertDTO);
+			boolean j1 = desertService.validAndSave(desertDTO);
 			System.out.println(j1);
-			boolean j2 = desertService2.validAndSave(desertDTO1);
+			boolean j2 = desertService.validAndSave(desertDTO1);
 			System.out.println(j2);
-			boolean j3 = desertService3.validAndSave(desertDTO2);
+			boolean j3 = desertService.validAndSave(desertDTO2);
 			System.out.println(j3);
-			boolean j4 = desertService4.validAndSave(desertDTO3);
+			boolean j4 = desertService.validAndSave(desertDTO3);
 			System.out.println(j4);
-			boolean j5 = desertService5.validAndSave(desertDTO4);
+			boolean j5 = desertService.validAndSave(desertDTO4);
 			System.out.println(j5);
-			boolean j6 = desertService6.validAndSave(desertDTO5);
+			boolean j6 = desertService.validAndSave(desertDTO5);
 			System.out.println(j6);
-			boolean j7 = desertService7.validAndSave(desertDTO6);
+			boolean j7 = desertService.validAndSave(desertDTO6);
 			System.out.println(j7);
-			boolean j8 = desertService8.validAndSave(desertDTO7);
+			boolean j8 = desertService.validAndSave(desertDTO7);
 			System.out.println(j8);
-			boolean j9 = desertService9.validAndSave(desertDTO8);
+			boolean j9 = desertService.validAndSave(desertDTO8);
 			System.out.println(j9);
-			boolean j10 = desertService10.validAndSave(desertDTO9);
+			boolean j10 = desertService.validAndSave(desertDTO9);
 			System.out.println(j10);
-			boolean j11 = desertService11.validAndSave(desertDTO10);
+			boolean j11 = desertService.validAndSave(desertDTO10);
 			System.out.println(j11);
-			boolean j12 = desertService12.validAndSave(desertDTO11);
+			boolean j12 = desertService.validAndSave(desertDTO11);
 			System.out.println(j12);
-			boolean j13 = desertService13.validAndSave(desertDTO12);
+			boolean j13 = desertService.validAndSave(desertDTO12);
 			System.out.println(j13);
-			boolean j14 = desertService14.validAndSave(desertDTO13);
+			boolean j14 = desertService.validAndSave(desertDTO13);
 			System.out.println(j14);
-			boolean j15 = desertService15.validAndSave(desertDTO14);
+			boolean j15 = desertService.validAndSave(desertDTO14);
 			System.out.println(j15);
-			boolean j16 = desertService16.validAndSave(desertDTO15);
+			boolean j16 = desertService.validAndSave(desertDTO15);
 			System.out.println(j16);
-			boolean j17 = desertService17.validAndSave(desertDTO16);
+			boolean j17 = desertService.validAndSave(desertDTO16);
 			System.out.println(j17);
-			boolean j18 = desertService18.validAndSave(desertDTO17);
+			boolean j18 = desertService.validAndSave(desertDTO17);
 			System.out.println(j18);
-			boolean j19 = desertService19.validAndSave(desertDTO18);
+			boolean j19 = desertService.validAndSave(desertDTO18);
 			System.out.println(j19);
-			boolean j20 = desertService20.validAndSave(desertDTO19);
+			boolean j20 = desertService.validAndSave(desertDTO19);
 			System.out.println(j20);
-			boolean j21 = desertService21.validAndSave(desertDTO20);
+			boolean j21 = desertService.validAndSave(desertDTO20);
 			System.out.println(j21);
-			boolean j22 = desertService22.validAndSave(desertDTO21);
+			boolean j22 = desertService.validAndSave(desertDTO21);
 			System.out.println(j22);
-			boolean j23 = desertService23.validAndSave(desertDTO22);
+			boolean j23 = desertService.validAndSave(desertDTO22);
 			System.out.println(j23);
 
-			DesertDTO find = desertService1.find(desertDTO);
+			DesertDTO find = desertService.find(desertDTO);
 			System.out.println(find);
-			DesertDTO find1 = desertService4.find(desertDTO3);
+			DesertDTO find1 = desertService.find(desertDTO3);
 			System.out.println(find1);
 
-			DesertDTO find2 = desertService6.find(desertDTO5);
+			DesertDTO find2 = desertService.find(desertDTO5);
 			System.out.println(find2);
 
-			DesertDTO find3 = desertService8.find(desertDTO7);
+			DesertDTO find3 = desertService.find(desertDTO7);
 			System.out.println(find3);
 
-			DesertDTO find4 = desertService9.find(desertDTO8);
+			DesertDTO find4 = desertService.find(desertDTO8);
 			System.out.println(find4);
 
-			DesertDTO find5 = desertService11.find(desertDTO10);
+			DesertDTO find5 = desertService.find(desertDTO10);
 			System.out.println(find5);
 
-			DesertDTO find6 = desertService13.find(desertDTO12);
+			DesertDTO find6 = desertService.find(desertDTO12);
 			System.out.println(find6);
 
-			DesertDTO find7 = desertService16.find(desertDTO15);
+			DesertDTO find7 = desertService.find(desertDTO15);
 			System.out.println(find7);
 
-			DesertDTO find8 = desertService23.find(desertDTO22);
+			DesertDTO find8 = desertService.find(desertDTO22);
 			System.out.println(find8);
 
-			DesertDTO find9 = desertService20.find(desertDTO19);
+			DesertDTO find9 = desertService.find(desertDTO19);
 			System.out.println(find9);
 
-			DesertDTO name = desertService16.findByName("Thar");
+			DesertDTO name = desertService.findByName("Thar");
 			System.out.println(name);
-			DesertDTO name1 = desertService18.findByName("Guban");
+			DesertDTO name1 = desertService.findByName("Guban");
 			System.out.println(name1);
-			DesertDTO name2 = desertService20.findByName("Registan");
+			DesertDTO name2 = desertService.findByName("Registan");
 			System.out.println(name2);
-			DesertDTO name3 = desertService22.findByName("Dankil");
+			DesertDTO name3 = desertService.findByName("Dankil");
 			System.out.println(name3);
-			DesertDTO name4 = desertService4.findByName("Africa");
+			DesertDTO name4 = desertService.findByName("Africa");
 			System.out.println(name4);
 
-			double area1 = desertService1.findAreaByName("Antarctica");
+			double area1 = desertService.findAreaByName("Antarctica");
 			System.out.println(area1);
-			double area = desertService16.findAreaByName("Thar");
+			double area = desertService.findAreaByName("Thar");
 			System.out.println(area);
 
-			DesertDTO nameCountryArea = desertService20.findByNameAndCountryAndArea("Registan", "World", 88);
+			DesertDTO nameCountryArea = desertService.findByNameAndCountryAndArea("Registan", "World", 88);
 			System.out.println(nameCountryArea);
 		} catch (DataInvalidException e) {
 			System.out.println(e.getMessage());
 		}
 
-		int total = desertService1.total();
+		int total = desertService.total();
 		System.out.println("Total dto saved are :" + total);
 
 	}
