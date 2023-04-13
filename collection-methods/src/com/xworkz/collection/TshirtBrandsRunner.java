@@ -54,11 +54,11 @@ public class TshirtBrandsRunner {
 		collection.add(9);
 		
 		
-		Integer[] array=collection.toArray(new Integer[10]);
+		Object[] array=collection.toArray();
 		System.out.println(Arrays.toString(array));
 		
 		
-		Integer[] array1=collection.toArray(array);
+		Object[] array1=collection.toArray(array);
 		System.out.println(Arrays.toString(array1));
 	}
 }

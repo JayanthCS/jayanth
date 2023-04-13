@@ -7,10 +7,12 @@ public class ShooterRunner {
 
 	public static void main(String[] args) {
 
-		ShooterUtil.test((gunType) -> {
+		System.out.println(ShooterUtil.test((gunType) -> {
 			System.out.println(gunType);
 			return true;
-		});
+		}));
+		
+//		System.out.println(ShooterUtil.test(null));
 
 	}
 }
