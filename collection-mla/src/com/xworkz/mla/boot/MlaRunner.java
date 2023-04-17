@@ -2,6 +2,7 @@ package com.xworkz.mla.boot;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import com.xworkz.mla.dto.MlaDTO;
 
@@ -25,7 +26,7 @@ public class MlaRunner {
 		MlaDTO mlaDTOs13 = new MlaDTO("Anjali Nimbalkar", 49, "Khanapur", "Congress", false, "Female");
 		MlaDTO mlaDTOs14 = new MlaDTO("D. M. Basavantaray", 65, "Kittur", "BJP", false, "Male");
 		MlaDTO mlaDTOs15 = new MlaDTO("Mahantesh Kaujlagi", 65, "Bailhongal", "Congress", false, "Male");
-		MlaDTO mlaDTOs16 = new MlaDTO("Saundatti Yellamma", 0, null, null, false, null);
+		MlaDTO mlaDTOs16 = new MlaDTO("Saundatti Yellamma", 0, "", "", false, "");
 		MlaDTO mlaDTOs17 = new MlaDTO("Mahadevappa Shivalingappa Yadawad", 55, "Ramdurg", "BJP", false, "Male");
 		MlaDTO mlaDTOs18 = new MlaDTO("Govind M. Karjol", 72, "Mudhol", "BJP", false, "Male");
 		MlaDTO mlaDTOs19 = new MlaDTO("Siddu Savadi", 60, "Terdal", "BJP", false, "Male");
@@ -58,7 +59,7 @@ public class MlaRunner {
 		MlaDTO mlaDTOs47 = new MlaDTO("Sharanu Salagar", 47, "Basavakaylana", "BJP", false, "Male");
 		MlaDTO mlaDTOs48 = new MlaDTO("Rajshekar Basavaraj Patil", 55, "Homnabad", "Congress", false, "Male");
 		MlaDTO mlaDTOs49 = new MlaDTO("Bandeppa Kashempura", 58, "Bidar South", "Janata Dal(Secular)", false, "Male");
- 		MlaDTO mlaDTOs50 = new MlaDTO("Rahim Khan", 56, "Bidar", "Congress", false, "Male");
+		MlaDTO mlaDTOs50 = new MlaDTO("Rahim Khan", 56, "Bidar", "Congress", false, "Male");
 		MlaDTO mlaDTOs51 = new MlaDTO("Eshwara Bhimanna Jhandre", 61, "Bhalki", "Congress", false, "Male");
 		MlaDTO mlaDTOs52 = new MlaDTO("Prabhu Chavhan", 53, "Aurad", "BJP", false, "Male");
 		MlaDTO mlaDTOs53 = new MlaDTO("Basanagouda Daddal", 60, "Raichur Rural", "Congress", false, "Male");
@@ -104,16 +105,427 @@ public class MlaRunner {
 		MlaDTO mlaDTOs93 = new MlaDTO("B.Nagendra", 51, "Bellary Rural", "Congress", false, "Male");
 		MlaDTO mlaDTOs94 = new MlaDTO("G.Somashekara Reddy", 57, "Bellary City", "BJP", false, "Male");
 		MlaDTO mlaDTOs95 = new MlaDTO("E Tukaram", 55, "Sandur", "Congress", false, "Male");
-		MlaDTO mlaDTOs96 = new MlaDTO(null, 0, "Kudligi", null, false, null);
+		MlaDTO mlaDTOs96 = new MlaDTO("", 0, "Kudligi", "", false, "");
 		MlaDTO mlaDTOs97 = new MlaDTO("B. Sreeramulu", 51, "Molakalmuru", "BJP", false, "Male");
 		MlaDTO mlaDTOs98 = new MlaDTO("T.Raghumurthy", 55, "Challakere", "Congress", false, "Male");
 		MlaDTO mlaDTOs99 = new MlaDTO("G.H Thippareddy", 69, "Chitradurga", "BJP", false, "Male");
 		MlaDTO mlaDTOs100 = new MlaDTO("Poornima Krishnappa", 46, "Hiriyur", "BJP", false, "Female");
+		MlaDTO mlaDTOs101 = new MlaDTO("Shashikala Annasaheb Jolle", 53, "Nippani", "BJP", false, "Female");
+		MlaDTO mlaDTOs102 = new MlaDTO("Ganesh Hukkeri", 44, "Chikkodi-Sadalga", "Congress", false, "Male");
+		MlaDTO mlaDTOs103 = new MlaDTO("Mahesh Kumathalli ", 61, " Athani", "BJP ", false, "Male");
+		MlaDTO mlaDTOs104 = new MlaDTO("Srimant Patil", 68, "Kagwad", "BJP", false, "Male");
+		MlaDTO mlaDTOs105 = new MlaDTO("P.Rajeev", 45, "Kudachi", "BJP", false, "Male");
+		MlaDTO mlaDTOs106 = new MlaDTO("Duryodhan Mahalingappa Aihole", 66, "Raibag", "BJP", false, "Male");
 
-//		Collection<String> details=new ArrayList<>();
-//		
-//	details.add(null)
-//				
+		MlaDTO mlaDTOs107 = new MlaDTO("Gulhatty D.Shekhar", 56, "Hosadurga", "BJP", false, "Male");
+		MlaDTO mlaDTOs108 = new MlaDTO("M.Chandrappa", 57, "Holalkere", "BJP", false, "Male");
+		MlaDTO mlaDTOs109 = new MlaDTO("S.V.Ramachandra", 60, "Jagalur", "BJP", false, "Male");
+		MlaDTO mlaDTOs110 = new MlaDTO("G. Karunakara Reddy", 61, "Harapanahalli", "BJP", false, "Male");
+		MlaDTO mlaDTOs111 = new MlaDTO("S. Ramappa", 67, "Harihar", "Congress", false, "Male");
+		MlaDTO mlaDTOs112 = new MlaDTO("S. A. Ravindranath", 76, "Davanagere North", "BJP", false, "Male");
+		MlaDTO mlaDTOs113 = new MlaDTO("Shamanur Shivashankarappa", 92, "Davanagere South", "Congress", false, "Male");
+		MlaDTO mlaDTOs114 = new MlaDTO("N. Linganna	", 64, "Mayakonda", "BJP", false, "Male");
+		MlaDTO mlaDTOs115 = new MlaDTO("K. Madal Veerupakshappa", 55, "Channagiri", "BJP", false, "Male");
+		MlaDTO mlaDTOs116 = new MlaDTO("M. P. Renukacharya", 66, "Honnali	", "BJP", false, "Male");
+
+		MlaDTO mlaDTOs117 = new MlaDTO("K. B. Ashok Naik", 59, "Shimoga Rural", "BJP", false, "Male");
+		MlaDTO mlaDTOs118 = new MlaDTO("B.K. Sangameshwara", 56, "Bhadravati", "Congress", false, "Male");
+		MlaDTO mlaDTOs119 = new MlaDTO("K. S. Eshwarappa", 74, "Shimoga", "BJP", false, "Male");
+		MlaDTO mlaDTOs120 = new MlaDTO("Araga Jnanendra", 70, "Tirthahalli", "BJP", false, "Male");
+		MlaDTO mlaDTOs121 = new MlaDTO("B. S. Yeddyurappa", 80, "Shikaripura", "BJP", false, "Male");
+		MlaDTO mlaDTOs122 = new MlaDTO("Kumar Bangarappa", 59, "Soraba", "BJP", false, "Male");
+		MlaDTO mlaDTOs123 = new MlaDTO("Hartalu Halappa	", 62, "Sagar	", "BJP", false, "Male");
+		MlaDTO mlaDTOs124 = new MlaDTO("B. M. Sukumar Shetty", 60, "Baindur", "BJP", false, "Male");
+		MlaDTO mlaDTOs125 = new MlaDTO("Halady Srinivas Shetty", 60, "Kundapura", "BJP", false, "Male");
+		MlaDTO mlaDTOs126 = new MlaDTO("K. Raghupati Bhat", 54, "Udupi", "BJP", false, "Male");
+
+		MlaDTO mlaDTOs127 = new MlaDTO("Lalaji Mendon", 58, "Kapu", "BJP", false, "Male");
+		MlaDTO mlaDTOs128 = new MlaDTO("V. Sunil Kumar ", 47, "Karkal", "BJP", false, "Male");
+		MlaDTO mlaDTOs129 = new MlaDTO("T. D. Rajegowda", 60, "Sringeri", "Congress", false, "Male");
+		MlaDTO mlaDTOs130 = new MlaDTO("M. P. Kumaraswamy", 47, "Mudigere", "BJP", false, "Male");
+		MlaDTO mlaDTOs131 = new MlaDTO("C. T. Ravi", 55, "Chikmagalur", "BJP", false, "Male");
+		MlaDTO mlaDTOs132 = new MlaDTO("D. S. Suresh", 47, "Tarikere", "BJP", false, "Male");
+		MlaDTO mlaDTOs133 = new MlaDTO("Belliprakash", 50, "Kadur", "BJP", false, "Male");
+		MlaDTO mlaDTOs134 = new MlaDTO("J. C. Madhuswamy", 70, "Chiknayakanhalli", "BJP", false, "Male");
+		MlaDTO mlaDTOs135 = new MlaDTO("B. C. Nagesh", 68, "Tiptur", "BJP", false, "Male");
+		MlaDTO mlaDTOs136 = new MlaDTO("Jayaram A S	", 65, "Turuvekere", "BJP", false, "Male");
+
+		MlaDTO mlaDTOs137 = new MlaDTO("Dr H.D. Ranganath", 62, "Kunigal", "Congress", false, "Male");
+		MlaDTO mlaDTOs138 = new MlaDTO("Tumkur City", 63, "G. B. Jyothi Ganesh", "BJP", false, "Male");
+		MlaDTO mlaDTOs139 = new MlaDTO("Tumkur Rural", 47, "D. C. Gowrishankar", "Janata Dal(Secular)", false,
+				"Female");
+		MlaDTO mlaDTOs140 = new MlaDTO("Dr. G. Parameshwara	", 69, "Koratagere", "Congress", false, "Male");
+		MlaDTO mlaDTOs141 = new MlaDTO(" S. R. Srinivas", 58, "Gubbi", "BJP", false, "Male");
+		MlaDTO mlaDTOs142 = new MlaDTO("C. M. Rajesh Gowda", 68, "Sira", "BJP", false, "Male");
+		MlaDTO mlaDTOs143 = new MlaDTO("Venkata Ramanappa", 57, "Pavagada", "Congress", false, "Male");
+		MlaDTO mlaDTOs144 = new MlaDTO("M.V. Veerabhadraiah", 60, "Madhugiri", "Janata Dal(Secular)", false, "Male");
+		MlaDTO mlaDTOs145 = new MlaDTO("N. H. Shivashankara Reddy", 55, "Gauribidanur", "Congress", false, "Male");
+		MlaDTO mlaDTOs146 = new MlaDTO("S. N. Subbareddy", 58, "Bagepalli", "Congress", false, "Male");
+		MlaDTO mlaDTOs147 = new MlaDTO("K. Sudhakar", 70, "Chikkaballapur", "BJP", false, "Male");
+
+		MlaDTO mlaDTOs148 = new MlaDTO("V. Muniyappa", 80, "Sidlaghatta", "Congress", false, "Male");
+		MlaDTO mlaDTOs149 = new MlaDTO("J. K. Krishnareddy", 64, "Chintamani", "BJP", false, "Male");
+		MlaDTO mlaDTOs150 = new MlaDTO("K. R. Ramesh Kumar", 54, "Srinivasapur", "Congress", false, "Male");
+		MlaDTO mlaDTOs151 = new MlaDTO("H. Nagesh", 68, "Mulbagal", "Congress", false, "Male");
+		MlaDTO mlaDTOs152 = new MlaDTO("M. Roopakala", 55, "Kolar Gold Field", "Congress", false, "Female");
+		MlaDTO mlaDTOs153 = new MlaDTO("S. N. Narayanaswamy ", 56, "Bangarapet", "Congress", false, "Male");
+		MlaDTO mlaDTOs154 = new MlaDTO("K. Srinivasa Gowda	", 79, "Kolar", "Congress", false, "Male");
+		MlaDTO mlaDTOs155 = new MlaDTO("K. Y. Nanjegowda", 55, "Malur", "Congress", false, "Male");
+		MlaDTO mlaDTOs156 = new MlaDTO("S. R. Vishwanath", 60, "Yelahanka", "BJP", false, "Male");
+
+		MlaDTO mlaDTOs157 = new MlaDTO("Byrathi Basavaraj", 65, "K. R. Pura", "BJP", false, "Male");
+		MlaDTO mlaDTOs158 = new MlaDTO("Krishna Byre Gowda", 45, "Byatarayanapura", "Congress", false, "Male");
+		MlaDTO mlaDTOs159 = new MlaDTO("S. T. Somashekar", 35, "Yeshwanthpur", "BJP", false, "Male");
+		MlaDTO mlaDTOs160 = new MlaDTO("Munirathna", 48, "Rajarajeshwari Nagar", "BJP", false, "Male");
+		MlaDTO mlaDTOs161 = new MlaDTO("R. Manjunatha", 55, "Dasarahalli", "Janata Dal(Secular)", false, "Male");
+		MlaDTO mlaDTOs162 = new MlaDTO("K. Gopalaiah", 60, "Mahalakshmi Layout", "BJP", false, "Male");
+		MlaDTO mlaDTOs163 = new MlaDTO("Dr. C.N. Ashwath Narayan", 53, "Malleshwaram", "BJP", false, "Male");
+		MlaDTO mlaDTOs164 = new MlaDTO("Byrathi Suresh", 58, "Hebbal", "Congress", false, "Male");
+		MlaDTO mlaDTOs165 = new MlaDTO("Akhanda Srinivas Murthy", 59, "Pulakeshinagar", "Congress", false, "Male");
+		MlaDTO mlaDTOs166 = new MlaDTO("K. J. George", 60, "Sarvagnanagar", "Congress", false, "Male");
+
+		MlaDTO mlaDTOs167 = new MlaDTO("S. Raghu", 56, "C. V. Raman Nagar", "BJP", false, "Male");
+		MlaDTO mlaDTOs168 = new MlaDTO("Rizwan Arshad", 65, "Shivajinagar", "Congress", false, "Male");
+		MlaDTO mlaDTOs169 = new MlaDTO("N. A. Haris", 59, "Shanti Nagar", "Congress", false, "Male");
+		MlaDTO mlaDTOs170 = new MlaDTO("Dinesh Gundu Rao", 61, "Gandhi Nagar", "Congress", false, "Male");
+		MlaDTO mlaDTOs171 = new MlaDTO("S. Suresh Kumar", 57, "Rajaji Nagar", "BJP", false, "Male");
+		MlaDTO mlaDTOs172 = new MlaDTO("V. Somanna", 64, "Govindraj Nagar", "BJP", false, "Male");
+		MlaDTO mlaDTOs173 = new MlaDTO("M. Krishnappa", 60, "Vijay Nagar	", "Congress", false, "Male");
+		MlaDTO mlaDTOs174 = new MlaDTO("Zameer Ahmed Khan", 61, "Chamrajpet", "Congress", false, "Male");
+		MlaDTO mlaDTOs175 = new MlaDTO("Uday B. Garudachar", 59, "Chickpet", "BJP", false, "Male");
+		MlaDTO mlaDTOs176 = new MlaDTO("L. A. Ravi Subramanya", 70, "Basavanagudi", "BJP", false, "Male");
+
+		MlaDTO mlaDTOs177 = new MlaDTO("R. Ashoka	", 63, "Padmanaba Nagar", "BJP", false, "Male");
+		MlaDTO mlaDTOs178 = new MlaDTO("Ramalinga Reddy", 64, "B.T.M. Layout", "Congress", false, "Male");
+		MlaDTO mlaDTOs179 = new MlaDTO("Soumya Reddy", 55, "Jayanagar", "Congress", false, "Female");
+		MlaDTO mlaDTOs180 = new MlaDTO("Aravind Limbavali", 48, "Mahadevapura", "BJP", false, "Male");
+		MlaDTO mlaDTOs181 = new MlaDTO("M Satish Reddy", 46, "Bommanahalli", "BJP", false, "Male");
+		MlaDTO mlaDTOs182 = new MlaDTO("M. Krishnappa", 50, "Bangalore South", "BJP", false, "Male");
+		MlaDTO mlaDTOs183 = new MlaDTO("B.Shivanna", 45, "Anekal", "Congress", false, "Male");
+		MlaDTO mlaDTOs184 = new MlaDTO("Sharath Kumar Bachegowda", 58, "Hoskote", "Congress", false, "Male");
+		MlaDTO mlaDTOs185 = new MlaDTO("Nisarga Narayanaswamy L.N", 53, "Devanahalli", "Janata Dal(Secular)", false,
+				"Male");
+		MlaDTO mlaDTOs186 = new MlaDTO("T. Venkataramanaiah", 60, "Doddaballapur", "Congress", false, "Male");
+
+		MlaDTO mlaDTOs187 = new MlaDTO("Dr. K. Srinavasamurthy", 56, "Nelamangala", "Janata Dal(Secular)", false,
+				"Male");
+		MlaDTO mlaDTOs188 = new MlaDTO("A. Manjunath", 58, "Magadi", "Janata Dal(Secular)", false, "Male");
+		MlaDTO mlaDTOs189 = new MlaDTO("Anitha Kumaraswamy", 57, "Ramanagara", "Janata Dal(Secular)", false, "Female");
+		MlaDTO mlaDTOs190 = new MlaDTO("D. K. Shivakumar", 62, "Kanakapura", "Congress", false, "Male");
+		MlaDTO mlaDTOs191 = new MlaDTO("H. D. Kumaraswamy", 59, "Channapatna", "Janata Dal(Secular)", false, "Male");
+		MlaDTO mlaDTOs192 = new MlaDTO("Dr. K. Annadani", 46, "Malavalli", "Janata Dal(Secular)", false, "Male");
+		MlaDTO mlaDTOs193 = new MlaDTO("D. C. Thammanna", 78, "Maddur", "Janata Dal(Secular)", false, "Male");
+		MlaDTO mlaDTOs194 = new MlaDTO("C. S. Puttaraju", 58, "Melukote", "Janata Dal(Secular)", false, "Male");
+		MlaDTO mlaDTOs195 = new MlaDTO("M. Srinivas", 59, "Mandya", "Janata Dal(Secular)", false, "Male");
+		MlaDTO mlaDTOs196 = new MlaDTO("Ravindra Srikantaiah", 61, "Shrirangapattana", "Janata Dal(Secular)", false,
+				"Male");
+
+		MlaDTO mlaDTOs197 = new MlaDTO("Suresh Gowda", 60, "Nagamangala", "Janata Dal(Secular)", false, "Male");
+		MlaDTO mlaDTOs198 = new MlaDTO("Narayana Gowda", 63, "Krishnarajpet", "BJP", false, "Male");
+		MlaDTO mlaDTOs199 = new MlaDTO("C. N. Balakrishna", 58, "Shravanabelagola", "Janata Dal(Secular)", false,
+				"Male");
+		MlaDTO mlaDTOs200 = new MlaDTO("K. M. Shivalingegowda", 64, "Arsikere", "Congress", false, "Male");
+		MlaDTO mlaDTOs201 = new MlaDTO("K. S. Lingesha", 43, "Belur", "Janata Dal(Secular)", false, "Male");
+		MlaDTO mlaDTOs202 = new MlaDTO("Preetham J. Gowda", 67, "Hassan", "BJP", false, "Male");
+		MlaDTO mlaDTOs203 = new MlaDTO("H. D. Revanna", 48, "Holenarasipur", "Janata Dal(Secular)", false, "Male");
+		MlaDTO mlaDTOs204 = new MlaDTO("Ramaswamy", 52, "Arkalgud", "Janata Dal(Secular)", false, "Male");
+		MlaDTO mlaDTOs205 = new MlaDTO("H. K. Kumaraswamy", 50, "Sakleshpur", "Janata Dal(Secular)", false, "Male");
+
+		MlaDTO mlaDTOs206 = new MlaDTO("Harish Poonja", 45, "Belthangady", "BJP", false, "Male");
+		MlaDTO mlaDTOs207 = new MlaDTO("Umanatha A. Kotian", 54, "Moodabidri", "BJP", false, "Male");
+		MlaDTO mlaDTOs208 = new MlaDTO("Bharath Shetty", 35, "Mangalore City North", "BJP", false, "Male");
+		MlaDTO mlaDTOs209 = new MlaDTO("D. Vedavyas Kamath", 53, "Mangalore City South", "BJP", false, "Male");
+		MlaDTO mlaDTOs210 = new MlaDTO("U. T. Khader", 58, "Mangalore", "Congress", false, "Male");
+		MlaDTO mlaDTOs211 = new MlaDTO("Rajesh Naik", 55, "Bantval", "BJP", false, "Male");
+		MlaDTO mlaDTOs212 = new MlaDTO("Sanjeeva Matandoor", 60, "Puttur", "BJP", false, "Male");
+		MlaDTO mlaDTOs213 = new MlaDTO("Angara S", 61, "Sullia	", "BJP", false, "Fmale");
+		MlaDTO mlaDTOs214 = new MlaDTO("Appachu Ranjan", 62, "Madikeri", "BJP", false, "Male");
+		MlaDTO mlaDTOs215 = new MlaDTO("K. G. Bopaiah", 65, "Virajpet", "BJP", false, "Male");
+
+		MlaDTO mlaDTOs216 = new MlaDTO("K. Mahadeva", 60, "Periyapatna", "Janata Dal(Secular)", false, "Male");
+		MlaDTO mlaDTOs217 = new MlaDTO("S. R. Mahesh", 58, "Krishnarajanagara", "Janata Dal(Secular)", false, "Male");
+		MlaDTO mlaDTOs218 = new MlaDTO("H. P. Manjunath", 47, "Hunsuru	", "Congress", false, "Male");
+		MlaDTO mlaDTOs219 = new MlaDTO("Anil Kumar C", 59, "Heggadadevankote", "Congress", false, "Male");
+		MlaDTO mlaDTOs220 = new MlaDTO("Harshavardhan B", 57, "Nanjangud", "BJP", false, "Male");
+		MlaDTO mlaDTOs221 = new MlaDTO("GT Devegowda", 56, "Chamundeshwari", "Janata Dal(Secular)", false, "Male");
+		MlaDTO mlaDTOs222 = new MlaDTO("S. A. Ramadas", 64, "Krishnaraja", "BJP", false, "Male");
+		MlaDTO mlaDTOs223 = new MlaDTO("L. Nagendra", 46, "Chamaraja", "BJP", false, "Male");
+		MlaDTO mlaDTOs224 = new MlaDTO("Tanveer Sait", 68, "Narasimharaja", "Congress", false, "Male");
+		MlaDTO mlaDTOs225 = new MlaDTO("Yathindra S", 70, "Varuna", "Congress", false, "Male");
+
+		Collection<MlaDTO> details = new ArrayList<>();
+
+		details.add(mlaDTOs);
+		details.add(mlaDTOs1);
+		details.add(mlaDTOs2);
+		details.add(mlaDTOs3);
+		details.add(mlaDTOs4);
+		details.add(mlaDTOs5);
+		details.add(mlaDTOs6);
+		details.add(mlaDTOs7);
+		details.add(mlaDTOs8);
+		details.add(mlaDTOs9);
+		details.add(mlaDTOs10);
+		details.add(mlaDTOs11);
+		details.add(mlaDTOs12);
+		details.add(mlaDTOs13);
+		details.add(mlaDTOs14);
+		details.add(mlaDTOs15);
+		details.add(mlaDTOs16);
+		details.add(mlaDTOs17);
+		details.add(mlaDTOs18);
+		details.add(mlaDTOs19);
+		details.add(mlaDTOs20);
+		details.add(mlaDTOs21);
+		details.add(mlaDTOs22);
+		details.add(mlaDTOs23);
+		details.add(mlaDTOs24);
+		details.add(mlaDTOs25);
+		details.add(mlaDTOs26);
+		details.add(mlaDTOs27);
+		details.add(mlaDTOs28);
+		details.add(mlaDTOs29);
+		details.add(mlaDTOs30);
+		details.add(mlaDTOs31);
+		details.add(mlaDTOs32);
+		details.add(mlaDTOs35);
+		details.add(mlaDTOs34);
+		details.add(mlaDTOs36);
+		details.add(mlaDTOs37);
+		details.add(mlaDTOs38);
+		details.add(mlaDTOs39);
+		details.add(mlaDTOs40);
+		details.add(mlaDTOs41);
+		details.add(mlaDTOs42);
+		details.add(mlaDTOs43);
+		details.add(mlaDTOs44);
+		details.add(mlaDTOs45);
+		details.add(mlaDTOs46);
+		details.add(mlaDTOs47);
+		details.add(mlaDTOs48);
+		details.add(mlaDTOs49);
+		details.add(mlaDTOs50);
+		details.add(mlaDTOs51);
+		details.add(mlaDTOs52);
+		details.add(mlaDTOs53);
+		details.add(mlaDTOs54);
+		details.add(mlaDTOs55);
+		details.add(mlaDTOs56);
+		details.add(mlaDTOs57);
+		details.add(mlaDTOs58);
+		details.add(mlaDTOs59);
+		details.add(mlaDTOs60);
+		details.add(mlaDTOs61);
+		details.add(mlaDTOs62);
+		details.add(mlaDTOs63);
+		details.add(mlaDTOs64);
+		details.add(mlaDTOs65);
+		details.add(mlaDTOs66);
+		details.add(mlaDTOs67);
+		details.add(mlaDTOs68);
+		details.add(mlaDTOs69);
+		details.add(mlaDTOs70);
+		details.add(mlaDTOs71);
+		details.add(mlaDTOs72);
+		details.add(mlaDTOs73);
+		details.add(mlaDTOs74);
+		details.add(mlaDTOs75);
+		details.add(mlaDTOs76);
+		details.add(mlaDTOs77);
+		details.add(mlaDTOs78);
+		details.add(mlaDTOs79);
+		details.add(mlaDTOs80);
+		details.add(mlaDTOs81);
+		details.add(mlaDTOs82);
+		details.add(mlaDTOs83);
+		details.add(mlaDTOs84);
+		details.add(mlaDTOs85);
+		details.add(mlaDTOs86);
+		details.add(mlaDTOs87);
+		details.add(mlaDTOs88);
+		details.add(mlaDTOs89);
+		details.add(mlaDTOs90);
+		details.add(mlaDTOs91);
+		details.add(mlaDTOs92);
+		details.add(mlaDTOs93);
+		details.add(mlaDTOs94);
+		details.add(mlaDTOs95);
+		details.add(mlaDTOs96);
+		details.add(mlaDTOs97);
+		details.add(mlaDTOs98);
+		details.add(mlaDTOs99);
+		details.add(mlaDTOs100);
+		details.add(mlaDTOs101);
+		details.add(mlaDTOs102);
+		details.add(mlaDTOs103);
+		details.add(mlaDTOs104);
+		details.add(mlaDTOs105);
+		details.add(mlaDTOs106);
+		details.add(mlaDTOs107);
+		details.add(mlaDTOs108);
+		details.add(mlaDTOs109);
+		details.add(mlaDTOs110);
+		details.add(mlaDTOs111);
+		details.add(mlaDTOs112);
+		details.add(mlaDTOs113);
+		details.add(mlaDTOs114);
+		details.add(mlaDTOs115);
+		details.add(mlaDTOs116);
+		details.add(mlaDTOs117);
+		details.add(mlaDTOs118);
+		details.add(mlaDTOs119);
+		details.add(mlaDTOs120);
+		details.add(mlaDTOs121);
+		details.add(mlaDTOs122);
+		details.add(mlaDTOs123);
+		details.add(mlaDTOs124);
+		details.add(mlaDTOs125);
+		details.add(mlaDTOs126);
+		details.add(mlaDTOs127);
+		details.add(mlaDTOs128);
+		details.add(mlaDTOs129);
+		details.add(mlaDTOs130);
+		details.add(mlaDTOs131);
+		details.add(mlaDTOs132);
+		details.add(mlaDTOs133);
+		details.add(mlaDTOs134);
+		details.add(mlaDTOs135);
+		details.add(mlaDTOs136);
+		details.add(mlaDTOs137);
+		details.add(mlaDTOs138);
+		details.add(mlaDTOs139);
+		details.add(mlaDTOs140);
+		details.add(mlaDTOs141);
+		details.add(mlaDTOs142);
+		details.add(mlaDTOs143);
+		details.add(mlaDTOs144);
+		details.add(mlaDTOs145);
+		details.add(mlaDTOs146);
+		details.add(mlaDTOs147);
+		details.add(mlaDTOs148);
+		details.add(mlaDTOs149);
+		details.add(mlaDTOs150);
+		details.add(mlaDTOs151);
+		details.add(mlaDTOs152);
+		details.add(mlaDTOs153);
+		details.add(mlaDTOs154);
+		details.add(mlaDTOs155);
+		details.add(mlaDTOs156);
+		details.add(mlaDTOs157);
+		details.add(mlaDTOs158);
+		details.add(mlaDTOs159);
+		details.add(mlaDTOs160);
+		details.add(mlaDTOs161);
+		details.add(mlaDTOs162);
+		details.add(mlaDTOs163);
+		details.add(mlaDTOs164);
+		details.add(mlaDTOs165);
+		details.add(mlaDTOs166);
+		details.add(mlaDTOs167);
+		details.add(mlaDTOs168);
+		details.add(mlaDTOs169);
+		details.add(mlaDTOs170);
+		details.add(mlaDTOs171);
+		details.add(mlaDTOs172);
+		details.add(mlaDTOs173);
+		details.add(mlaDTOs174);
+		details.add(mlaDTOs175);
+		details.add(mlaDTOs176);
+		details.add(mlaDTOs177);
+		details.add(mlaDTOs178);
+		details.add(mlaDTOs179);
+		details.add(mlaDTOs180);
+		details.add(mlaDTOs181);
+		details.add(mlaDTOs182);
+		details.add(mlaDTOs183);
+		details.add(mlaDTOs184);
+		details.add(mlaDTOs185);
+		details.add(mlaDTOs186);
+		details.add(mlaDTOs187);
+		details.add(mlaDTOs188);
+		details.add(mlaDTOs189);
+		details.add(mlaDTOs190);
+		details.add(mlaDTOs191);
+		details.add(mlaDTOs192);
+		details.add(mlaDTOs193);
+		details.add(mlaDTOs194);
+		details.add(mlaDTOs195);
+		details.add(mlaDTOs196);
+		details.add(mlaDTOs197);
+		details.add(mlaDTOs198);
+		details.add(mlaDTOs199);
+		details.add(mlaDTOs200);
+		details.add(mlaDTOs201);
+		details.add(mlaDTOs202);
+		details.add(mlaDTOs203);
+		details.add(mlaDTOs204);
+		details.add(mlaDTOs205);
+		details.add(mlaDTOs206);
+		details.add(mlaDTOs207);
+		details.add(mlaDTOs208);
+		details.add(mlaDTOs209);
+		details.add(mlaDTOs210);
+		details.add(mlaDTOs211);
+		details.add(mlaDTOs212);
+		details.add(mlaDTOs213);
+		details.add(mlaDTOs214);
+		details.add(mlaDTOs215);
+		details.add(mlaDTOs216);
+		details.add(mlaDTOs217);
+		details.add(mlaDTOs218);
+		details.add(mlaDTOs219);
+		details.add(mlaDTOs220);
+		details.add(mlaDTOs221);
+		details.add(mlaDTOs222);
+		details.add(mlaDTOs223);
+		details.add(mlaDTOs224);
+		details.add(mlaDTOs225);
+
+		System.out.println(details.size());
+
+		for (MlaDTO mlaDTO : details) {
+			System.out.println(mlaDTO);
+		}
+
+		System.err.println("Age greater Than 50..................");
+		details.stream().filter(e -> e.getAge() > 50).collect(Collectors.toList()).forEach(e -> System.out.println(e));
+
+		System.err.println("Age less than 50.....................");
+		details.stream().filter(e -> e.getAge() < 50).collect(Collectors.toList()).forEach(e -> System.out.println(e));
+
+		System.err.println("All male MLAs ...........................");
+		details.stream().filter(e -> e.getGender().contains("Male")).collect(Collectors.toList())
+				.forEach(e -> System.out.println(e));
+
+		System.err.println("All Female MLAs......................");
+		details.stream().filter(e -> e.getGender().contains("Female")).collect(Collectors.toList())
+				.forEach(e -> System.out.println(e));
+
+		System.err.println("Sorting by asscending order of party................");
+		// details.stream().filter(e ->
+		// e.getParty()).sorted().collect(Collectors.toList())
+		// .forEach(e -> System.out.println(e));
+		details.stream().sorted((ref1, ref2) -> ref1.getParty().compareTo(ref2.getParty())).collect(Collectors.toList())
+				.forEach(e -> System.out.println(e));
+
+		System.err.println("Sorting name in Asscending order................");
+		details.stream().sorted((ref1, ref2) -> ref1.getName().compareTo(ref2.getName())).collect(Collectors.toList())
+				.forEach(e -> System.out.println(e));
+
+		System.err.println("Sorting age in Desending order......................");
+		details.stream().sorted((ref1, ref2) -> ref2.getAge().compareTo(ref1.getAge())).collect(Collectors.toList())
+				.forEach(e -> System.out.println(e));
+
+		System.err.println("Finding Unique parties");
+		details.stream().map(e -> e.getParty()).collect(Collectors.toSet()).forEach(e -> System.out.println(e));
+
+		System.err.println("All MLAs age Greater than 50 and party is bjp..........");
+		details.stream().filter(e -> e.getAge() > 50 && e.getParty().contains("BJP")).collect(Collectors.toList())
+				.forEach(e -> System.out.println(e));
+
+		System.err.println("All MLAs by party...............................");
+		details.stream().filter(e -> e.getParty().contains("BJP")).collect(Collectors.toList())
+				.forEach(e -> System.out.println(e));
 
 	}
 }
