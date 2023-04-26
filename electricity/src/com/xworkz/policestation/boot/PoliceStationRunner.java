@@ -1,7 +1,5 @@
 package com.xworkz.policestation.boot;
 
-import java.util.ArrayList;
-import java.util.Collection;
 
 import com.xworkz.policestation.constant.Cell;
 import com.xworkz.policestation.dto.PoliceStationDTO;
@@ -14,7 +12,6 @@ public class PoliceStationRunner {
 
 	public static void main(String[] args) {
 
-		Collection<PoliceStationDTO> stationDTOs = new ArrayList<>();
 
 		PoliceStationDTO dto = new PoliceStationDTO(1, "Central Jail", "Dinakar", Cell.FIVE, "Rajajinagar");
 		PoliceStationDTO dto1 = new PoliceStationDTO(2, "KamakshiPalya Station", "Basu", Cell.FOUR, "Kamakshipalya");

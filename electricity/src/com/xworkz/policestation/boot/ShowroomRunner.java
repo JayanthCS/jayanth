@@ -15,7 +15,6 @@ public class ShowroomRunner {
 
 	public static void main(String[] args) {
 
-		Collection<ShowroomDTO> showroomDTOs = new ArrayList<ShowroomDTO>();
 
 		ShowroomDTO showroomDTO = new ShowroomDTO(1, "Enfield", Location.BANGLORE, 8105023991L,
 				LocalDate.of(2010, 4, 1), false);

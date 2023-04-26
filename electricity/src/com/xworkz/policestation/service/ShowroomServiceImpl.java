@@ -10,10 +10,13 @@ import javax.validation.ValidatorFactory;
 import com.xworkz.policestation.dto.AmbulanceDTO;
 import com.xworkz.policestation.dto.ShowroomDTO;
 import com.xworkz.policestation.repository.ShowroomRepo;
+import com.xworkz.policestation.util.ValidationUtil;
 
 public class ShowroomServiceImpl implements ShowroomService {
 
 	private ShowroomRepo showroomRepo;
+	
+	private ValidationUtil<ShowroomDTO> validationUtil=new ValidationUtil<>();
 
 	public ShowroomServiceImpl(ShowroomRepo showroomRepo) {
 		this.showroomRepo = showroomRepo;
@@ -28,14 +31,9 @@ public class ShowroomServiceImpl implements ShowroomService {
 		if (dto != null) {
 			System.out.println("dto is not null we can save data :" + dto);
 
-			ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-
-			Validator validator = factory.getValidator();
-			Set<ConstraintViolation<ShowroomDTO>> constraintViolations = validator.validate(dto);
-
-			System.out.println("Total violation :" + constraintViolations.size());
-			constraintViolations.forEach(cv -> System.err.println(cv.getPropertyPath() + "   " + cv.getMessage()));
-			if (constraintViolations != null && constraintViolations.isEmpty()) {
+			
+			
+			if (validationUtil.validate(dto)) {
 				System.out.println("No violation constraints found in dto ");
 				return this.showroomRepo.save(dto);
 			}

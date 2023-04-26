@@ -14,7 +14,6 @@ public class AmbulanceRunner {
 
 	public static void main(String[] args) {
 
-		Collection<AmbulanceDTO> ambulanceDTOs = new ArrayList<>();
 
 		AmbulanceDTO ambulanceDTO = new AmbulanceDTO(1, 10, 15, "Bommayi", false, "Ganga", LocalDate.of(2010, 4, 1));
 		AmbulanceDTO ambulanceDTO1 = new AmbulanceDTO(2, 12, 11, "Yash", false, "Darshan", LocalDate.of(2011, 4, 1));
