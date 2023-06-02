@@ -23,6 +23,13 @@ Mobile:<%= request.getParameter("mobile") %><br>
 Country:<%= request.getParameter("country") %><br>
 Type:<%= request.getParameter("type") %><br>
 Description:<%= request.getParameter("description") %>
+<br>
+
+
+<form action="done" method="post">
+<input type="submit" value="details">
+
+</form>
 
 </body>
 </html>

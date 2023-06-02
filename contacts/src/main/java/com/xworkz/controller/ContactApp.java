@@ -29,7 +29,13 @@ public class ContactApp {
 		for (ContactDTO contactDTO : collectionDtos) {
 			System.out.println("Contact saved in collection:" + contactDTO);
 		}
-		
+
 		return "display.jsp";
+	}
+
+	@RequestMapping("/done")
+	public String done(ContactDTO dto, Model model) {
+		model.addAttribute("collect", this.collectionDtos);
+		return "Contact.jsp";
 	}
 }
