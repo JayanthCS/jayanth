@@ -1,0 +1,64 @@
+                                      TEST
+					
+4) Constructor: Constructor is a special type of method which has same name has class name
+       Types of Constructor are
+       * Default Constructor : Default Constructor means no-arg constructor , and also it is inbuilt, and it gives
+	   default values of the given dataType.
+       * Parameter Constructor: Parameter constructor are user defined constructor where programmer can provide 
+         parameters with in the parantisis of the constructor.
+
+1)* public static void main(String arg[])
+   public is acess specifier
+    static is non acess specifier
+    void is return type
+     main method name
+    String arg[] is a command line argument
+   
+   *JVM: Java Vertual Machine, jvm converts .java file to .class file
+      jvm performs some task before executing the programm.
+	  1) loads the byte code
+	  2) verifies the byte code
+	  3) executes the byte code
+	  and also it provide untime environment to byte code
+    JRE:Java Runtime Environment , it contains jvm + set of libraries
+	JDK:Java gDevelopment Kit, it contains jre+development tools 
+
+    *class: a class is a real time entity , it is a blue print of an object
+	 object: it is a instance of a class,object has states and behaviour
+
+5) this keyword is used to differenciate the instance variables and parameter variables
+   this() is used when the const should be called in another const of same class
+   
+6) the main method is static because there is no necssity to create the object and firstly static properties will executes so main method is static and it belongs to its own class
+    there are two types of methods 
+   * pre-defined method
+   *user defined method
+
+12)yes
+
+10)No 
+  we can overload the const by constructor chaining by calling one const inside the other const in the same class   
+
+3)public static void main(String[] args) {
+		
+		System.out.println("Enter the string ");
+		
+		Scanner sp = new Scanner(System.in);
+		 String name= sp.next();
+		 char ch[] = name.toCharArray();
+		String rev = "";
+		
+		
+		for(int i=ch.length-1;i>=0;i--) {
+			rev=rev+ch[i];
+			
+		}
+		System.out.println("Original string :"+name);
+		System.out.println("Reverse string :"+rev);
+	
+	}
+
+
+
+ 	
+					

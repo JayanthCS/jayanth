@@ -41,7 +41,7 @@ Description: <textarea name="description"></textarea>
 
 <br>
 
-<input type="submit" value="send">
+<input type="submit" value="send"><br>
 
 
 
