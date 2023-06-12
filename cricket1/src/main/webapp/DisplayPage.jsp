@@ -6,69 +6,44 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Display page</title>
+<title>Display Page</title>
 <style type="text/css">
 th, td {
 	text-align: center;
 	border: 1px solid;
 }
 </style>
+
 </head>
-
-
-
 <body>
 
-	<h1 style="color: blue">Display page.............</h1>
-
-
-
-
-
-
+	<h1 style="color: blue">Details.........</h1>
 
 	<table>
 		<thead>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Mobile</th>
-			<th>Address</th>
-			<th>Email</th>
+			<th>Name</th>
 			<th>Country</th>
-			<th>State</th>
-			<th>Fav Color</th>
-			<th>Fav Location</th>
-			<th>Description</th>
+			<th>Age</th>
 			<th>File</th>
-
+			</thead>
 			<br>
 
 			<c:forEach items="${saving}" var="item">
 				<tr>
-					<td>${item.fname}</td>
-					<td>${item.lname}</td>
-					<td>${item.mobile}</td>
-					<td>${item.address}</td>
-					<td>${item.email}</td>
+					<td>${item.name}</td>
 					<td>${item.country}</td>
-					<td>${item.state}</td>
-					<td>${item.favColor}</td>
-					<td>${item.favLocation}</td>
-					<td>${item.description}</td>
+					<td>${item.age}</td>
 					<td><a target="_blank"
 						href="fileDownload?fileName=${item.fileName}&contentType=${item.contentType}">${item.fileName}</a></td>
+
+
 
 
 				</tr>
 
 
 			</c:forEach>
-
-
-
-
-		</thead>
-
+		
 
 	</table>
 </body>

@@ -5,15 +5,12 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.net.http.HttpResponse;
 import java.util.ArrayList;
-
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
@@ -25,70 +22,63 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.xworkz.constant.EventConstant;
-import com.xworkz.dto.EventDTO;
-import com.xworkz.service.EventService;
+import com.xworkz.constant.CricketerConstant;
+import com.xworkz.dto.CricketerDTO;
+import com.xworkz.service.CricketerService;
 
 @Component
 @RequestMapping("/")
-public class EventApp implements WebMvcConfigurer{
+public class CricketerApp {
 
-	private Collection<EventDTO> collectionDtos = new ArrayList<>();
-	private Set<EventDTO> dtos = new TreeSet<>();
-	
+	private Collection<CricketerDTO> collection = new ArrayList<>();
+	private Set<CricketerDTO> dtos = new TreeSet<>();
 	@Autowired
-	private EventService service;
+	private CricketerService service;
 
-	public EventApp() {
-		System.out.println("no-arg constructor of EventApp");
+	public CricketerApp() {
+		// TODO Auto-generated constructor stub
+		System.out.println("no-arg const of CricketApp");
 	}
 
 	@RequestMapping("/save")
-	public String save(@Valid EventDTO dto, BindingResult bindingResult, Model model, MultipartFile file)
+	public String save(@Valid CricketerDTO dto, BindingResult bindingResult, Model model, MultipartFile file)
 			throws IOException {
 		System.out.println("Running save method");
-//		System.out.println(dto);
 		if (bindingResult.hasErrors()) {
-			System.out.println("event data is invalid");
+			System.err.println("Cricketer data is inValid");
 			List<ObjectError> errors = bindingResult.getAllErrors();
 			errors.forEach(ob -> System.err.println(ob.getDefaultMessage()));
 
 			model.addAttribute("error", errors);
-
-			return "welcome.jsp";
+			return "Welcome.jsp";
 		} else {
-
-			System.out.println("Data is valid");
+			System.out.println("Cricketer data is valid");
 			System.out.println("File Recived " + file.getName());
 			System.out.println("File Size" + file.getSize());
 			System.out.println("File Type" + file.getContentType());
 			System.out.println("File bytes" + file.getBytes());
 
 			System.out.println(dtos);
-			dto.setFileName(System.currentTimeMillis() + "   " + file.getOriginalFilename());
-
+			dto.setFileName(System.currentTimeMillis() + "  " + file.getOriginalFilename());
 			dto.setContentType(file.getContentType());
 			dto.setFileSize(file.getSize());
-			
-			 service.validateAndThenSave(dto);
-			
-			File physicalFile = new File(EventConstant.FILE_NAME + dto.getFileName());
+
+			service.validateAndSave(dto);
+			File physicalFile = new File(CricketerConstant.FILE_NAME + dto.getFileName());
 
 			try (OutputStream outputStream = new FileOutputStream(physicalFile)) {
 				outputStream.write(file.getBytes());
 			}
+			this.collection.add(dto);
+			// this.dtos.add(dto);
+			model.addAttribute("msg", "Successfully registered  " + dto.getName());
 
-			this.dtos.add(dto);
-           
-			model.addAttribute("msg", "registerd successfully " + dto.getFname());
-			this.collectionDtos.add(dto);
-			for (EventDTO eventDTO : collectionDtos) {
-				System.out.println("Contact saved in collection:" + eventDTO);
+			for (CricketerDTO cricketerDTO : collection) {
+				System.out.println("Details saved in collection:" + cricketerDTO);
 			}
 		}
-		return "welcome.jsp";
+		return "Welcome.jsp";
 	}
 
 	@GetMapping("/fileDownload")
@@ -96,7 +86,7 @@ public class EventApp implements WebMvcConfigurer{
 			throws IOException {
 		System.out.println("Running sendImage");
 		System.out.println("FILE NAME " + fileName);
-		File file = new File(EventConstant.FILE_NAME + fileName);
+		File file = new File(CricketerConstant.FILE_NAME + fileName);
 		System.out.println(file.getPath() + "   " + file.getAbsolutePath());
 		response.setContentType(contentType);
 		OutputStream os = response.getOutputStream();
@@ -110,18 +100,12 @@ public class EventApp implements WebMvcConfigurer{
 		os.flush();
 
 	}
-//	@GetMapping("list")
-//	public String showData(Model model) {
-//		System.out.println("Running showData");
-//		model.addAttribute("dtos", this.dtos);
-//		return "/display.jsp";
-//	}
 
 	@RequestMapping("/saving")
-	public String saved(Model model) {
-		System.out.println("Running saved Method");
-		model.addAttribute("saving", this.collectionDtos);
-		return "display.jsp";
+	public String saving(Model model) {
+		System.out.println("Running saving method");
+		model.addAttribute("saving", this.collection);
+		return "DisplayPage.jsp";
 	}
 
 }
