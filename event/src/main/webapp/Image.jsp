@@ -15,7 +15,15 @@
 
 </head>
 <body>
-	<a href="Welcome.jsp">View</a>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">X-Workz</a>
+    
+    <a href="Welcome.jsp">View</a>
+   </div>
+  </nav>
+  <br>
+	
 
 	<form action="fileDownload" method="get">
 		File Name<input type="text" name="fileName"> Content Type<input

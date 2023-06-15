@@ -7,20 +7,23 @@ import org.springframework.stereotype.Service;
 import com.xworkz.dto.EventDTO;
 import com.xworkz.entity.EventEntity;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
-public class EventServiceImpl implements EventService{
+@Slf4j
+public class EventServiceImpl implements EventService {
 
 	public EventServiceImpl() {
-		System.out.println("no-arg const of EventServiceImpl");
+		log.info("no-arg const of EventServiceImpl");
 	}
 
 	@Override
 	public boolean validateAndThenSave(EventDTO dto) {
-		System.out.println("Executing validateAndThenSave method");
+		log.info("Executing validateAndThenSave method");
 		EventEntity entity = new EventEntity();
 		BeanUtils.copyProperties(dto, entity);
-		System.out.println(entity);
-		
+		log.info(" " + entity);
+
 		return true;
 	}
 }

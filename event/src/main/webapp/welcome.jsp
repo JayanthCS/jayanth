@@ -8,48 +8,70 @@
 <meta charset="ISO-8859-1">
 <title>Welcome</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style type="text/css">
 
+label{
+width:100px;
+display:inline-block;
+margin:4px;
+}
+
+#form{
+border-radius: 10px;
+	background: aqua;
+	color: black;
+	width: 500px;
+	padding: 20px;
+	left: 50%;
+	top: 50%;
+	margin-left: -16%;
+	position: absolute;
+	margin-top: -10%;
+
+}
+
+
+</style>
 </head>
 <body>
 
 <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">X-Workz</a>
-  
+ <a href="Image.jsp">View In</a> 
  <a href="saving">View Details</a>
+ 
 </div>
 
 </nav>
 
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-  <!-- Navbar content -->
-</nav>
-<center>
-<h1 style="color:green">Welcome Page</h1>
 
-<h1>Register here for event</h1>
 
-<a style="color:blue">${msg}</a>
+<h1 style="color:green" class="d-flex justify-content-center">Welcome Page</h1>
+
+<h1 class="d-flex justify-content-center">Register here for event</h1>
+
+<a style="color:blue" class="d-flex justify-content-center">${msg}</a>
 
 <c:forEach  items="${error}" var="error">
-<a style="color:red">${error.defaultMessage}</a><br>
+<a style="color:red" class="d-flex justify-content-center">${error.defaultMessage}</a><br>
 
 </c:forEach>
 
 
 <br>
 
-<div><a href="Image.jsp">View In</a></div>
 
 
 
 
+<div id="form" class="d-flex justify-content-center">
 <form action="save" method="post" enctype="multipart/form-data">
-First Name:<input type="text" name="fname" id="name" onchange="valideName()"> <span id="nameError" style="color: red;"></span> <br>
-Last Name:<input type="text" name="lname" id="lname"><br>
-Mobile No:<input type="text" name="mobile" id="mobile"><br>
-Address:<input type="text" name="address" id="address"><br>
-Email:<input type="text" name="email" id="email"><br>
+<label>First Name:</label><input type="text" name="fname" id="name" onchange="valideName()"> <span id="nameError" style="color: red;"></span> <br>
+<label>Last Name:</label><input type="text" name="lname" id="lname" onchange="validLName()"> <span id="lnameError" style="color: red;"></span><br>
+<label>Mobile No:</label><input type="text" name="mobile" id="mobile" onchange="validMobile()"> <span id="mobileError" style="color: red;"></span><br>
+<label>Address:</label><input type="text" name="address" id="address" onchange="validAddress()"><span id="addressError" style="color: red;"></span><br>
+<label>Email:</label><input type="text" name="email" id="email"><br>
 
 <label>Country:</label>
 <select name="country" id="country" onchange="validCountry()"> 
@@ -81,17 +103,18 @@ Email:<input type="text" name="email" id="email"><br>
 
 
 
-<p>Favorite Location for even............ </p>
-<input type="checkbox" name="favLocation" value="Goa">
-<label for="goa">Goa</label><br>
-<input type="checkbox"  name="favLocation" value="Karnataka">
-<label for="karnataka">Karnataka</label><br>
-<input type="checkbox" name="favLocation" value="Bengaluru">
-<label for="bengaluru">Bengaluru</label><br>
 
 
-Description: <textarea name="description"></textarea>
 
+<label>Description:</label> <textarea name="description"></textarea>
+
+<br>
+<label><p>Favorite Location:</p></label>
+<input type="radio" name="favLocation" value="Goa">Goa
+
+<input type="radio"  name="favLocation" value="Karnataka">Karnataka
+
+<input type="radio" name="favLocation" value="Bengaluru">Bengaluru
 <br>
 <label >Upload image</label>
 
@@ -99,7 +122,7 @@ Description: <textarea name="description"></textarea>
 <input type="submit"  value="save"> 
 
 </form>
-</center>
+</div>
 
 
 <script>
@@ -113,6 +136,41 @@ function valideName() {
 		document.getElementById("nameError").innerHTML="name should be greater than 3 and less than 30";
 	}
 }
+
+function validLName() {
+	var userLName=document.getElementById("lname");
+	var userLNameValue=userLName.value;
+	console.log(userLNameValue);
+	if(userLNameValue!=null && userLNameValue!=""&& userLNameValue.length>1&& userLNameValue.length<30){
+		document.getElementById("lnameError").innerHTML="";
+	}else{
+		document.getElementById("lnameError").innerHTML="lname should be greater than 3 and less than 30";
+	}
+}
+
+function validMobile() {
+	var userMobile=document.getElementById("mobile");
+	var userMobileValue=userMobile.value;
+	console.log(userMobileValue);
+	if(userMobileValue!=""&&userMobileValue.length>9){
+		document.getElementById("mobileError").innerHTML="";
+			}else{
+				document.getElementById("mobileError").innerHTML="Mobile number should be greaterThan 9 and not empty";
+			}
+}
+
+function validAddress() {
+	var userAddress=document.getElementById("address");
+	var userAddressValue=userAddress.value;
+	console.log(userAddressValue);
+	if(userAddressValue!=null&&userAddressValue!=""&&userAddressValue.length>5&&userAddressValue.length<50){
+		document.getElementById("addressError").innerHTML="";
+	}else{
+		document.getElementById("addressError").innerHTML="Address should be more than 5 and less than 50";	
+	}
+	
+}
+
 
 
 function validCountry() {

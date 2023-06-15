@@ -1,4 +1,4 @@
-package com.xworkz.configure;
+package com.xworkz.contact.configure;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,31 +10,30 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import lombok.extern.slf4j.Slf4j;
-
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.xworkz")
-@Slf4j
-public class EventConfiguration implements WebMvcConfigurer {
+@ComponentScan("com.xworkz.contact")
+public class ContactConfiguration implements WebMvcConfigurer{
 
-	public EventConfiguration() {
-		log.info("no-arg constructor of EventConfiguration");
+	public ContactConfiguration() {
+		System.out.println("No-arg constructor of ContactConfiguration");
 	}
-
+	
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
-		log.info("Running addViewControllers");
-		registry.addViewController("/").setViewName("start");
+		System.out.println("Running addViewControllers");
+		registry.addViewController("/").setViewName("/Home.jsp");
 	}
-
-	@Bean
-	public MultipartResolver multipartResolver() {
-		return new StandardServletMultipartResolver();
-	}
-
+	
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();
 	}
+	
+	@Bean
+	public MultipartResolver multipartResolver() {
+		return new StandardServletMultipartResolver();
+	}
+	
 }
+
