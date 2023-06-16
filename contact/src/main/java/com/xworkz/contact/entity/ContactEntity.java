@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -12,7 +13,8 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "contact")
-
+@NamedQuery(name = "findByName",query = "select info from ContactEntity as info where info.name like :nm")
+@NamedQuery(name = "findByEmail",query = "select count(*) from ContactEntity ce where ce.email=:emailBy")
 public class ContactEntity {
 
 	@Id

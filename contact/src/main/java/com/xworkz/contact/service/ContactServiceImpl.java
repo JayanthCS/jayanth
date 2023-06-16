@@ -1,6 +1,9 @@
 package com.xworkz.contact.service;
 
+import java.util.List;
 import java.util.Properties;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -35,14 +38,40 @@ public class ContactServiceImpl implements ContactService {
 		ContactEntity contactEntity = new ContactEntity();
 		BeanUtils.copyProperties(dto, contactEntity);
 		System.out.println("Entity:" + contactEntity);
+		Long cont=this.repo.emailCount(dto.getEmail());
+		if(cont==0) {
 		boolean save = repo.save(contactEntity);
-		if(save) {
+		if (save) {
 			boolean sendMail = sendMail(contactEntity.getEmail());
 			System.out.println(sendMail);
-		}else {
+		} else {
 			System.out.println("mail not send");
 		}
+		}else {
+			return false;
+		}
 		return true;
+	}
+
+	@Override
+	public List<ContactDTO> findByName(String name) {
+		System.out.println("Running findByName method");
+		List<ContactEntity> entities = this.repo.findByName(name);
+
+		List<ContactDTO> dtos = entities.stream().map(ent -> {
+			ContactDTO contactDTO = new ContactDTO();
+			BeanUtils.copyProperties(ent, contactDTO);
+			return contactDTO;
+		}).collect(Collectors.toList());
+		return dtos;
+	}
+
+	@Override
+	public Long emailCount(String email) {
+		System.out.println("Running eamilCount");
+		Long value = this.repo.emailCount(email);
+
+		return value;
 	}
 
 	public boolean sendMail(String email) {

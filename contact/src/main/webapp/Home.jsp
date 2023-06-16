@@ -17,8 +17,9 @@
 	<nav class="navbar navbar-dark bg-dark">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">X-Workz</a>
-			<a href="ViewDetails">View Details</a>
+			<a href="view">View Details</a>
 	<a href="Register.jsp">Register</a>
+	<a href="Image.jsp">view</a>
 		</div>
 	</nav>
 

@@ -35,5 +35,7 @@ public class ContactConfiguration implements WebMvcConfigurer{
 		return new StandardServletMultipartResolver();
 	}
 	
+	
+	
 }
 
